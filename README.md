@@ -6,17 +6,9 @@
 
 An ultra-lightweight YOLO architecture optimized for deployment in resource-constrained Wireless Sensor Networks (WSN) using Sperm Swarm Optimization (SSO) for neural architecture search. Based on [YOLOv7](https://github.com/WongKinYiu/yolov7).
 
-## Key Achievements
+## Approach
 
-| Metric | YOLOv7-tiny | YOLOv5n | WSN-YOLO | Improvement vs YOLOv7-tiny |
-|---|---:|---:|---:|---:|
-| Parameters | 6,217,389 | 1,761,871 | 1,370,478 | **78.0% reduction** |
-| FLOPs | 13.2G | 4.1G | 3.1G | **76.5% reduction** |
-| Model Size | 47 MB | 15 MB | 2.9 MB | **93.8% reduction** |
-| mAP@0.5 | 99.69% | 99.0% | 99.57% | **99.88% retention** |
-| Precision | 98.0% | 96.5% | 97.6% | - |
-| Recall | 98.1% | 97.3% | 97.6% | - |
-| F1-Score | 98.0% | 96.9% | 97.6% | - |
+The architecture is not a shrunk copy of an existing model. Sperm Swarm Optimization (SSO) searches the network structure directly, scoring each candidate on accuracy together with FLOPs, parameter count and inference time, so the result suits wireless sensor nodes with very little memory and power. It is compared against YOLOv7-tiny and YOLOv5n baselines under the same data and training conditions. Detailed results are being updated as the work continues, so figures are not listed here.
 
 ## Project Structure
 
