@@ -10,6 +10,22 @@ An ultra-lightweight YOLO architecture optimized for deployment in resource-cons
 
 The architecture is not a shrunk copy of an existing model. Sperm Swarm Optimization (SSO) searches the network structure directly, scoring each candidate on accuracy together with FLOPs, parameter count and inference time, so the result suits wireless sensor nodes with very little memory and power. It is compared against YOLOv7-tiny and YOLOv5n baselines under the same data and training conditions. Detailed results are being updated as the work continues, so figures are not listed here.
 
+## On-Device Deployment (Raspberry Pi 4)
+
+All four detectors were deployed on a Raspberry Pi 4 (ONNX Runtime, CPU) and
+measured directly, with per-inference energy taken from an inline INA219 current
+sensor (idle baseline subtracted). WSN-YOLO is the fastest, smallest, and
+lowest-energy detector on real hardware. Code and full notes: [`deployment/`](deployment/).
+
+| Detector | ONNX size (MB) | Latency mean (ms) | Peak RAM (MB) | Power (W) | Energy (mJ) |
+|---|---:|---:|---:|---:|---:|
+| **WSN-YOLO** | **5.5** | **197.6** | **123** | **4.77** | **486.9** |
+| YOLOv5n | 7.9 | 321.0 | 128 | 4.89 | 821.2 |
+| YOLOv8n | 12.8 | 490.9 | 130 | 5.10 | 1344.7 |
+| YOLOv7-tiny | 24.2 | 575.8 | 166 | 5.15 | 1584.2 |
+
+WSN-YOLO runs 1.6–2.9x faster and draws 1.7–3.3x less energy per inference than the baselines.
+
 ## Project Structure
 
 ```
@@ -29,6 +45,10 @@ yolov7/
 │   ├── sso_architecture_optimizer.py
 │   ├── sso_hyperparameter_optimizer.py
 │   └── SSO.m                   # Original MATLAB implementation
+├── deployment/                 # Raspberry Pi 4 + INA219 on-device energy testing
+│   ├── measure_pi.py           # latency / RAM / power / energy per inference
+│   ├── setup.sh, measure_energy.sh
+│   └── README.md               # wiring, protocol, measured results
 ├── runs/                       # Training outputs
 │   └── train/WSN_YOLO/        # Trained WSN-YOLO results
 ├── train.py                    # Training script
