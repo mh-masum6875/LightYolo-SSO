@@ -40,6 +40,13 @@ lowest-energy detector on real hardware. Code and full notes: [`deployment/`](de
 
 WSN-YOLO runs 1.6–2.9x faster and draws 1.7–3.3x less energy per inference than the baselines.
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="deployment/pi_results_dark.png">
+  <img alt="WSN-YOLO against YOLOv5n, YOLOv8n and YOLOv7-tiny on a Raspberry Pi 4: latency, energy, memory and model size" src="deployment/pi_results.png">
+</picture>
+
+A one page summary is in [`deployment/pi_results_onepager.pdf`](deployment/pi_results_onepager.pdf).
+
 ## Project Structure
 
 ```
