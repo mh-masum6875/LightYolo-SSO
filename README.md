@@ -43,6 +43,13 @@ Energy per inference comes from an inline INA219 sensor with the idle baseline s
 runs 1.6 to 2.9 times faster and uses 1.7 to 3.3 times less energy than the baselines. Wiring and
 protocol are in [`deployment/`](deployment/).
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="deployment/pi_results_dark.png">
+  <img alt="WSN-YOLO against YOLOv5n, YOLOv8n and YOLOv7-tiny on a Raspberry Pi 4: latency, energy, memory and model size" src="deployment/pi_results.png">
+</picture>
+
+A one page summary is in [`deployment/pi_results_onepager.pdf`](deployment/pi_results_onepager.pdf).
+
 ## Where things are
 
 ```

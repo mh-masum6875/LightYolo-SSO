@@ -1,0 +1,5 @@
+detector,onnx_mb,latency_mean_ms,latency_p95_ms,peak_ram_mb,power_w,energy_mj
+WSN-YOLO,5.5,197.6,201.5,123,4.77,486.9
+YOLOv5n,7.9,321.0,324.5,128,4.89,821.2
+YOLOv8n,12.8,490.9,496.7,130,5.10,1344.7
+YOLOv7-tiny,24.2,575.8,579.9,166,5.15,1584.2
