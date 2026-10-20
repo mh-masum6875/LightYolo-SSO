@@ -16,6 +16,16 @@ during inference and aggregated by the median with the idle baseline subtracted.
 Raspberry Pi 4 Model B · INA219 (0x40 on I2C bus 1) in series on the 5 V rail ·
 sacrificial USB-A->C cable with the +5 V wire routed through Vin+/Vin-.
 
+## Results at a glance
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="pi_results_dark.png">
+  <img alt="WSN-YOLO against YOLOv5n, YOLOv8n and YOLOv7-tiny on a Raspberry Pi 4: latency, energy, memory and model size" src="pi_results.png">
+</picture>
+
+A one page summary is in [`pi_results_onepager.pdf`](pi_results_onepager.pdf). The numbers behind the figure are in
+[`pi_results.csv`](pi_results.csv), and `python make_figure.py` redraws everything from that file.
+
 ## Measured results (100 inferences each, idle baseline subtracted)
 
 | Detector | ONNX size (MB) | Latency mean (ms) | Latency p95 (ms) | Peak RAM (MB) | Power (W) | Energy (mJ) |
