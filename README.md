@@ -119,6 +119,8 @@ The paper is in preparation. Until it is out, please cite this repository.
 1. Shehadeh, H.A., et al. "Sperm swarm optimization algorithm for optimizing wireless sensor network challenges." IEEE Access 9 (2021).
 2. Wang, C.Y., et al. "YOLOv7: Trainable bag-of-freebies sets new state-of-the-art for real-time object detectors." CVPR 2023.
 
+The SSO code is based on the original implementation by Shehadeh et al. The detector code is based on [WongKinYiu/yolov7](https://github.com/WongKinYiu/yolov7).
+
 ## License
 
 GPL-3.0, inherited from YOLOv7. See [LICENSE](LICENSE).
