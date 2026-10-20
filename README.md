@@ -64,7 +64,7 @@ yolov7/
 │   ├── setup.sh, measure_energy.sh
 │   └── README.md               # wiring, protocol, measured results
 ├── runs/                       # Training outputs
-│   └── train/WSN_YOLO/        # Trained WSN-YOLO results
+│   └── (current runs in rebuild-v2/results/)
 ├── train.py                    # Training script
 ├── test.py                     # Validation script
 ├── detect.py                   # Inference script
@@ -84,10 +84,10 @@ pip install -r requirements.txt
 
 ## Dataset
 
-The WSN-YOLO model is trained on the Intel Berkeley Research Laboratory (IBRL) dataset:
-- **Total Images**: 31,067 (256×256 grayscale)
-- **Classes**: 2 (Normal, Anomaly)
-- **Split**: Train (24,853) / Val (3,105) / Test (3,109)
+The WSN-FaultBench benchmark is built from the Intel Berkeley Research Laboratory (IBRL) streams (loc_hard tier, fault localisation):
+- **Images**: 256×256 greyscale windows with bounding-box fault labels
+- **Classes**: 4 fault types (spike, stuck, drift, noise)
+- **Split (loc_hard)**: Train (11,745) / Val (1,467) / Test (1,470)
 
 ## Training
 
@@ -138,7 +138,7 @@ python sso_hyperparameter_optimizer.py --population 15 --iterations 20
 
 ```bash
 python detect.py \
-    --weights runs/train/WSN_YOLO/weights/best.pt \
+    --weights rebuild-v2/trained_models/loc_hard_yolov8n.pt \
     --source path/to/images \
     --img-size 640 \
     --conf-thres 0.25
@@ -149,7 +149,7 @@ python detect.py \
 ```bash
 python test.py \
     --data data/wsn_dataset.yaml \
-    --weights runs/train/WSN_YOLO/weights/best.pt \
+    --weights rebuild-v2/trained_models/loc_hard_yolov8n.pt \
     --task val
 ```
 
@@ -178,11 +178,10 @@ With weights [0.4, 0.3, 0.2, 0.1] balancing accuracy and efficiency.
 
 ## Training Results
 
-The trained WSN-YOLO model results are available in `runs/train/WSN_YOLO/`:
-- `weights/best.pt` - Best performing model
-- `results.txt` - Training metrics per epoch
-- `confusion_matrix.png` - Confusion matrix visualization
-- `F1_curve.png`, `PR_curve.png` - Performance curves
+The current results are in `rebuild-v2/results/`:
+- `results.sqlite` - all logged metrics (36k-row runs table)
+- `trained_models/` - available trained weights and the YOLOv8n ONNX
+- `results/wp3_yolov8/` - YOLOv8n loc_hard curves (PR, confusion, results)
 
 ## Citation
 
