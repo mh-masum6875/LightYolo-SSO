@@ -1,0 +1,7 @@
+# WP2 proxy-training data config (DICC absolute paths, YOLOv7 ignores path:)
+# train = fixed 25% stratified subset (src.search.make_proxy_subset, seed 0)
+# val   = FULL loc_hard val split (proxy J is scored here)
+train: /home/user/mhmasum6875/yolov7_maidul/rebuild-v2/data/benchmarks/loc_hard/proxy_train_paths.txt
+val: /home/user/mhmasum6875/yolov7_maidul/rebuild-v2/data/benchmarks/loc_hard/val_paths.txt
+nc: 4
+names: ["spike", "stuck", "drift", "noise"]

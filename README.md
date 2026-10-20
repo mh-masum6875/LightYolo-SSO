@@ -8,7 +8,21 @@ An ultra-lightweight YOLO architecture optimized for deployment in resource-cons
 
 ## Approach
 
-The architecture is not a shrunk copy of an existing model. Sperm Swarm Optimization (SSO) searches the network structure directly, scoring each candidate on accuracy together with FLOPs, parameter count and inference time, so the result suits wireless sensor nodes with very little memory and power. It is compared against YOLOv7-tiny and YOLOv5n baselines under the same data and training conditions. Detailed results are being updated as the work continues, so figures are not listed here.
+The architecture is not a shrunk copy of an existing model. Sperm Swarm Optimization (SSO) searches the network structure directly, scoring each candidate on accuracy together with FLOPs, parameter count and inference time, so the result suits wireless sensor nodes with very little memory and power. It is compared against YOLOv7-tiny, YOLOv5n and YOLOv8n baselines under the same data and training conditions. Headline results are below; the full pipeline and all logged metrics are in [`rebuild-v2/`](rebuild-v2/).
+
+## Key Results (WSN-FaultBench loc_hard, detection)
+
+Fault **localisation** (multi-class bounding-box detection), as reported in the paper:
+
+| Detector | mAP@0.5 | mAP@0.5:0.95 | Params (M) | GFLOPs |
+|---|---:|---:|---:|---:|
+| **WSN-YOLO** | 0.913 | 0.832 | **1.35** | **2.6** |
+| YOLOv5n | 0.925 | 0.857 | 1.76 | 4.2 |
+| YOLOv8n | 0.945 | 0.896 | 3.01 | 8.1 |
+| YOLOv7-tiny | 0.930 | 0.865 | 6.02 | 13.2 |
+
+WSN-YOLO sits at the efficiency knee: within one to three points of far larger
+detectors at 4.5x fewer parameters than YOLOv7-tiny.
 
 ## On-Device Deployment (Raspberry Pi 4)
 

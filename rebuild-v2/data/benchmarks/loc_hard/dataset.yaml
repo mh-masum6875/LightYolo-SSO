@@ -1,0 +1,7 @@
+# WSN-FaultBench loc_hard - YOLOv7 dataset config
+path: .
+train: train_paths.txt
+val: val_paths.txt
+test: test_paths.txt
+nc: 4
+names: ['spike', 'stuck', 'drift', 'noise']

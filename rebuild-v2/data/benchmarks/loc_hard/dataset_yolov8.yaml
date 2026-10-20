@@ -1,0 +1,9 @@
+# WSN-FaultBench loc_hard - ultralytics (yolov8) config with ABSOLUTE paths.
+# ultralytics resolves list files/paths differently from yolov7; absolute paths
+# remove all ambiguity. Labels are found by the images/ -> labels/ convention.
+path: /home/user/mhmasum6875/yolov7_maidul/rebuild-v2/data/benchmarks/loc_hard
+train: train_abs.txt
+val: val_abs.txt
+test: test_abs.txt
+nc: 4
+names: ['spike', 'stuck', 'drift', 'noise']

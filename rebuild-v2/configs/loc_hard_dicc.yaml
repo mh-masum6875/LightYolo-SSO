@@ -1,0 +1,6 @@
+# WSN-FaultBench loc_hard - data config for DICC (absolute paths for YOLOv7)
+train: /home/user/mhmasum6875/yolov7_maidul/rebuild-v2/data/benchmarks/loc_hard/train_paths.txt
+val: /home/user/mhmasum6875/yolov7_maidul/rebuild-v2/data/benchmarks/loc_hard/val_paths.txt
+test: /home/user/mhmasum6875/yolov7_maidul/rebuild-v2/data/benchmarks/loc_hard/test_paths.txt
+nc: 4
+names: ['spike', 'stuck', 'drift', 'noise']

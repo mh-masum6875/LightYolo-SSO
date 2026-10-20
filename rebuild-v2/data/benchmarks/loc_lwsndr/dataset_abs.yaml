@@ -1,0 +1,5 @@
+train: /home/user/mhmasum6875/yolov7_maidul/rebuild-v2/data/benchmarks/loc_lwsndr/train_abs.txt
+val: /home/user/mhmasum6875/yolov7_maidul/rebuild-v2/data/benchmarks/loc_lwsndr/val_abs.txt
+test: /home/user/mhmasum6875/yolov7_maidul/rebuild-v2/data/benchmarks/loc_lwsndr/test_abs.txt
+nc: 4
+names: ['spike', 'stuck', 'drift', 'noise']

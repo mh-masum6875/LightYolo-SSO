@@ -1,0 +1,9 @@
+# WSN-FaultBench loc_hard - classic yolov5 (Dependencies/yolov5) config.
+# Absolute train/val/test image-list files (matches the wsn.yaml convention:
+# absolute paths, no `path:` key). Labels resolved by images/ -> labels/.
+train: /home/user/mhmasum6875/yolov7_maidul/rebuild-v2/data/benchmarks/loc_hard/train_abs.txt
+val: /home/user/mhmasum6875/yolov7_maidul/rebuild-v2/data/benchmarks/loc_hard/val_abs.txt
+test: /home/user/mhmasum6875/yolov7_maidul/rebuild-v2/data/benchmarks/loc_hard/test_abs.txt
+
+nc: 4
+names: ['spike', 'stuck', 'drift', 'noise']
